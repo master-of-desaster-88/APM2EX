@@ -2,6 +2,23 @@ APM2EX
 Version 1.0 schiwo1@gmail.com
 based on the Mav2Duplex code V0.1 by DevFor8.com - info@devfor8.com
 
+Features:
+The following parameters are tranferred to the Jeti EX transmitter:
+- Armed: 0=disarmed; 1=armed
+- Batt%: remaining battery capacity (0-100%)
+- Voltage: battery voltage
+- Current: actual current measured by the 3DR power sensor
+- Capacity: actual drawn battery capacity
+- Climb: climb speed in m/s
+- Lat: latitude in degrees (requires GPS)
+- Lon: longitude in degrees (requires GPS)
+- Home Dir: home direction heading
+- Home dist: distance to recorded home point in meter (requires GPS)
+- HDOP: HDOP value (1-10) - only fly with a HDOP <2!
+- GPS-Lock: 0=no GPS, 1=GPS, no fix, 2=2D fix, 3=3D fix
+- GPS Sat: number of found satellites
+- Speed: horizonal groundspeed (GPS) in m/s
+
 Hardware 
 - Arduino Pro Mini (or similar) with 5V / 16Mhz and ATMega 328
 - 4.7k resistor 
