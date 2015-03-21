@@ -9,6 +9,8 @@
 //------------------ Home Distance and Direction Calculation ----------------------------------
 
 unsigned long lastmillis = 0;
+unsigned int time_count = 1;
+float curr_capa_temp = 0;
 
 void setHomeVars()
 {
@@ -17,12 +19,21 @@ void setHomeVars()
   
     
   if (lastmillis < millis())
-  {
-     lastmillis = millis()+1000; //next second
-     if (osd_curr_A >= 0)
+  { 
+     if (((millis()-lastmillis) > 1000) && (lastmillis > 0))
      {
-         osd_capacity_mA = osd_capacity_mA + (osd_curr_A / 0.36);
+       time_count = int((millis()-lastmillis)/1000); //correction factor if it took longer than a second to come back
      }
+     else
+     {
+       time_count = 1; //correction factor if it took longer than a second to come back
+     }
+    if (osd_curr_A >= 0)
+     {
+         curr_capa_temp = curr_capa_temp + (osd_curr_A / 3.6)*time_count;
+     }
+    lastmillis = millis()+1000; //next second
+    osd_capacity_mA = int(curr_capa_temp);
   }
   
  // if (osd_fix_type >1) //0-1 = no fix, confusing. 0 = nofix, 2=2D , 3=3D
