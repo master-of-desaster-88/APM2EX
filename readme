@@ -3,6 +3,7 @@ Version 1.1 schiwo1@gmail.com
 based on the Mav2Duplex code V0.1 by DevFor8.com - info@devfor8.com
 Changes V1.1:
 - Capacity calculation fixed
+- NOTE: no support of the old Jetibox Mini (non EX protocol)
 
 Features V1.0:
 The following parameters are tranferred to the Jeti EX transmitter:
