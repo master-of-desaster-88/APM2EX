@@ -31,5 +31,4 @@ Hardware
 Troubleshooting 
 - Arduino reseting
 * measure your voltage for RC. If it is bellow or on 5V, connect to VCC instead of RAW pin on Arduino (!!WARNING , Higher than 5V voltage can smoke your Arduino)
-
-
+- Do not connect the sensor in parallel to a 433/900MHz Telemetry downlink to the same Telemertry port. Use a separate port or connect the sensor parallel to an OSD instead.
